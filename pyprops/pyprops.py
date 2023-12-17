@@ -10,8 +10,6 @@ class PyProps:
             for key in strings:
                 if key in line:
                     originalValue = line.split("=")[1]
-                    print("Original Value:"+originalValue)
-                    print("Replacement value:"+strings[key])
                     line=line.replace(originalValue,strings[key]+"\n")
             newLines.append(line)
 
@@ -36,3 +34,15 @@ class PyProps:
 
         with open(targetFilePath,"w") as f:
             f.writelines(newlines)
+
+    @staticmethod
+    def getKeyValuePairs(sourceFilePath: str) -> dict:
+        properties={}
+        with open(sourceFilePath,"r") as f:
+            lines=f.readlines()
+        
+        for line in lines:
+            key = line.split("=")[0]
+            value = line.split("=")[1].replace("\n","")
+            properties[key]=value
+        return properties
