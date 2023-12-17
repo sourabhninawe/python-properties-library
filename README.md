@@ -5,4 +5,4 @@ This library helps you to do the following:
 * Read and replace the properties file contents in place supplying the values to be replaced
 * Read the properties file and create new file with replaced properties
 ***
-<div><a href="https://github.com/sourabhninawe/python-properties-library">*Source Code*</a></div>
+<div><a href="https://github.com/sourabhninawe/python-properties-library">Source Code</a></div>
